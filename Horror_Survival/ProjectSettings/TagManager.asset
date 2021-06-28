@@ -1,0 +1,63 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!78 &1
+TagManager:
+  serializedVersion: 2
+  tags:
+  - Fire
+  - Apple
+  - Battery
+  - Knife
+  - Axe
+  - Crossbow
+  - Gun
+  - Baseball Bat
+  - Gun Ammo
+  - Crossbow Ammo
+  - House Key
+  - Cabin Key
+  - Room Key
+  - Door
+  - Enemy
+  - PKnife
+  - PBat
+  - PAxe
+  - PGun
+  - PCrossbow
+  layers:
+  - Default
+  - TransparentFX
+  - Ignore Raycast
+  - 
+  - Water
+  - UI
+  - 
+  - 
+  - PostProcessing
+  - Arms
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  m_SortingLayers:
+  - name: Default
+    uniqueID: 0
+    locked: 0
