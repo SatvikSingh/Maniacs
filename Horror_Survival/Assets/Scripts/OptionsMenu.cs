@@ -58,7 +58,7 @@ public class OptionsMenu : MonoBehaviour
 
     public void ReturnToMainMenu()
     {
-        SceneManager.LoadScene(0);
+        SceneManager.LoadScene(2);
     }
     public void AmbienceVolume()
     {
