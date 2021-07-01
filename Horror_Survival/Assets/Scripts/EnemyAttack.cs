@@ -103,7 +103,6 @@ public class EnemyAttack : MonoBehaviour
                     {
                         anim.SetInteger("State", 5);
                     }
-                    Debug.Log("I am attacking");
                     nav.acceleration = 180;
                     hurtUI.gameObject.SetActive(true);
 
@@ -145,6 +144,10 @@ public class EnemyAttack : MonoBehaviour
         if (other.gameObject.CompareTag("PBat"))
         {
             anim.SetTrigger("SmallReact");
+        }
+        if (other.gameObject.CompareTag("PCrossbow"))
+        {
+            anim.SetTrigger("BigReact");
         }
     }
 

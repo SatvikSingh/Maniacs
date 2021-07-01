@@ -13,6 +13,6 @@ public class CreditstoMenu : MonoBehaviour
     IEnumerator LoadMenu()
     {
         yield return new WaitForSeconds(4f);
-        SceneManager.LoadScene(1);
+        SceneManager.LoadScene(2);
     }
 }

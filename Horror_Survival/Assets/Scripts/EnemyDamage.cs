@@ -5,9 +5,9 @@ using UnityEngine;
 public class EnemyDamage : MonoBehaviour
 {
     [SerializeField] public int enemyHealth = 100;
-    public int knifeDamage = 10;
-    public int batDamage = 15;
-    public int axeDamage = 25;
+    public int knifeDamage = 20;
+    public int batDamage = 25;
+    public int axeDamage = 35;
     public int arrowDamage = 100;
 
     [SerializeField] AudioSource stabPlayer;
