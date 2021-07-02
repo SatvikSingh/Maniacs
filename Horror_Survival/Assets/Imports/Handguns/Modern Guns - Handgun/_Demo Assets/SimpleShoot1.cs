@@ -11,7 +11,7 @@ public class SimpleShoot1 : MonoBehaviour
     public GameObject muzzleFlashPrefab;
 
     [Header("Location Refrences")]
-    [SerializeField] private Animator gunAnimator;
+    //[SerializeField] private Animator gunAnimator;
     [SerializeField] private Transform barrelLocation;
     //[SerializeField] private Transform casingExitLocation;
 
@@ -21,15 +21,16 @@ public class SimpleShoot1 : MonoBehaviour
     [Tooltip("Casing Ejection Speed")] [SerializeField] private float ejectPower = 150f;
 
     private bool isShooting = false;
+    private AudioSource myPlayer;
 
 
     void Start()
     {
         if (barrelLocation == null)
             barrelLocation = transform;
-
-        if (gunAnimator == null)
-            gunAnimator = GetComponentInChildren<Animator>();
+        myPlayer = GetComponent<AudioSource>();
+        /* if (gunAnimator == null)
+            gunAnimator = GetComponentInChildren<Animator>(); */
     }
 
     void Update()
@@ -89,6 +90,7 @@ public class SimpleShoot1 : MonoBehaviour
     IEnumerator DelayTime()
     {
         GetComponent<Animator>().SetTrigger("Fire");
+        myPlayer.Play();
         yield return new WaitForSeconds(1.0f);
         isShooting = false;
     }
