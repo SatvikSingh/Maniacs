@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class EnemyDamage : MonoBehaviour
 {
@@ -15,6 +16,7 @@ public class EnemyDamage : MonoBehaviour
     [SerializeField] GameObject bloodSplatKnife;
     [SerializeField] GameObject bloodSplatBat;
     [SerializeField] GameObject bloodSplatAxe;
+    [SerializeField] bool isBoss = false;
 
     private AudioSource myPlayer;
     public bool hasDied = false;
@@ -42,6 +44,19 @@ public class EnemyDamage : MonoBehaviour
                     SaveScript.enemiesOnScreen--;
 
                     Destroy(this.transform.parent.gameObject, 25f);
+                }
+            }
+
+            if (isBoss == true)
+            {
+                if (enemyHealth <= 0)
+                {
+                    if (hasDied == false)
+                    {
+                        anim.SetTrigger("BossDead");
+                        hasDied = true;
+                        StartCoroutine(LoadFinalScene());
+                    }
                 }
             }
         }
@@ -88,5 +103,11 @@ public class EnemyDamage : MonoBehaviour
         bloodSplatBat.gameObject.SetActive(false);
         bloodSplatAxe.gameObject.SetActive(false);
         damageOn = true;
+    }
+
+    IEnumerator LoadFinalScene()
+    {
+        yield return new WaitForSeconds(6.0f);
+        SceneManager.LoadScene(4);
     }
 }

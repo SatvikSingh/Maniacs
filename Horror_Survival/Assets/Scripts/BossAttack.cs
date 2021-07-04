@@ -16,6 +16,7 @@ public class BossAttack : MonoBehaviour
     [SerializeField] GameObject chaseMusic;
     [SerializeField] GameObject hurtUI;
     [SerializeField] GameObject enemyDamageZone;
+    [SerializeField] Transform shootScript;
 
     void Start()
     {
@@ -49,6 +50,11 @@ public class BossAttack : MonoBehaviour
                 enemy.transform.rotation = Quaternion.Slerp(enemy.transform.rotation, posRotation, Time.deltaTime * attackRotateSpeed);
             }
         }
+
+        if (bossInfo.IsTag("Hurt"))
+        {
+            shootScript.GetComponent<SimpleShoot1>().enabled = false;
+        }
     }
 
     private void OnTriggerEnter(Collider other)
@@ -59,7 +65,7 @@ public class BossAttack : MonoBehaviour
         }
         if (other.gameObject.CompareTag("PAxe"))
         {
-            anim.SetTrigger("BigReact");
+            anim.SetTrigger("SmallReact");
         }
         if (other.gameObject.CompareTag("PBat"))
         {
