@@ -10,7 +10,7 @@ public class Spawner : MonoBehaviour
     [SerializeField] Transform spawnPoint1;
     [SerializeField] Transform spawnPoint2;
     [SerializeField] Transform spawnPoint3;
-    [SerializeField] bool retriggerable = false;
+    //[SerializeField] bool retriggerable = false;
 
     private bool canSpawn = true;
 
@@ -33,20 +33,10 @@ public class Spawner : MonoBehaviour
                         SaveScript.enemiesCurrent++;
                         Instantiate(enemySpawn3, spawnPoint3.position, spawnPoint3.rotation);
                         SaveScript.enemiesOnScreen++;
-                        SaveScript.enemiesCurrent++;
-                        if (retriggerable == true)
-                        {
-                            StartCoroutine(WaitToSpawn());
-                        }
+                        SaveScript.enemiesCurrent++;             
                     }
                 }
             }
         }
-    }
-
-    IEnumerator WaitToSpawn()
-    {
-        yield return new WaitForSeconds(2.0f);
-        canSpawn = true;
     }
 }

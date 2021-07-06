@@ -42,9 +42,9 @@ public class SaveScript : MonoBehaviour
     public static Animator hurt;
     public static AudioSource audioPlayer;
     public static GameObject arms;
-    public static int maxEnemiesOnScreen = 6;
+    public static int maxEnemiesOnScreen = 15;
     public static int enemiesOnScreen = 0;
-    public static int maxEnemiesInGame = 100;
+    public static int maxEnemiesInGame = 300;
     public static int enemiesCurrent = 0;
     public static int applesLeft = 10;
     public static int ammoLeft = 4;

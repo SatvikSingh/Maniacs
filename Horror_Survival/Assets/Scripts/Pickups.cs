@@ -103,6 +103,19 @@ public class Pickups : MonoBehaviour
                     }
                 }
             }
+            else if (hit.transform.tag == "NightvisionPickup")
+            {
+                canSeePickup = true;
+                if (Input.GetKeyDown(KeyCode.E))
+                {
+                    /* if (SaveScript.haveBat == false)
+                    {
+                        Destroy(hit.transform.gameObject);
+                        SaveScript.haveBat = true;
+                        myPlayer.Play();
+                    } */
+                }
+            }
             else if (hit.transform.tag == "Crossbow")
             {
                 canSeePickup = true;

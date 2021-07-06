@@ -24,6 +24,7 @@ TagManager:
   - PAxe
   - PGun
   - PCrossbow
+  - NightvisionPickup
   layers:
   - Default
   - TransparentFX
